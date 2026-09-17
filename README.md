@@ -319,14 +319,16 @@ adjust them to your local layout before running.
 
 ```
 .
-├── full_model/
-│   ├── simulation_core.h      # shared simulation engine (classes, sampling, history loop)
-│   ├── main_2.cpp             # interactive: material, geometry, mode all configurable
-│   ├── main.cpp               # fixed-parameter graphite demo
-│   └── materials.txt          # thermal cross sections for 10 materials
+│ 
+├── simulation_core.h      # shared simulation engine (classes, sampling, history loop)
+├── full_model.cpp             # interactive: material, geometry, mode all 
+├── materials.txt          # thermal cross sections for 10 materials
+├── graphite_demo/
+│   └── full_model_graphite.cpp               # fixed-parameter graphite demo
 ├── anisotropic_scattering/
 │   ├── anisotropic_scattering.cpp   # standalone CM-to-lab kinematics test
-│   └── plot_mu_distribution.py
+│   ├── plot_mu_distribution.py
+│   └── mu_lab_samples.py
 ├── analysis/
 │   ├── plot_flux_profile.py
 │   ├── plot_transmission_vs_thickness.py
