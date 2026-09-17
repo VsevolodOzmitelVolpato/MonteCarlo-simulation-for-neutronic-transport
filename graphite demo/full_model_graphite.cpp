@@ -16,7 +16,7 @@ int main(){
     long long int N_particles, max_collisions;
     
     std::string material_name = "graphite";
-    MaterialData graphite_data = read_material("C:\\Users\\sevin\\OneDrive\\Desktop\\Uni\\CppProgetti\\Fermilab 2.0\\main2 con scelta\\materials.txt", material_name);
+    MaterialData graphite_data = read_material("materials.txt", material_name);
 
     Material graphite(graphite_data.sigma_a, graphite_data.sigma_s, graphite_data.A);
 
