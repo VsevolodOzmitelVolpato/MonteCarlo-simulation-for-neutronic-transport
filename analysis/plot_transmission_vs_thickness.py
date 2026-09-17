@@ -3,7 +3,7 @@ import re
 import matplotlib.pyplot as plt
 import os
 
-PROJECT_DIR = r"C:\Users\sevin\OneDrive\Desktop\Uni\CppProgetti\Fermilab 2.0\main2 con scelta"
+PROJECT_DIR = r"full_model"
 EXE = os.path.join(PROJECT_DIR, "main_2.exe")
 
 MODE = "analog"
