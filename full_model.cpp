@@ -33,7 +33,7 @@ int main(){
     cin >> material_name;
     cout << endl;
 
-    MaterialData data = read_material("C:\\Users\\sevin\\OneDrive\\Desktop\\Uni\\CppProgetti\\Fermilab 2.0\\main2 con scelta\\materials.txt", material_name);
+    MaterialData data = read_material("materials.txt", material_name);
 
     Material chosen_material(data.sigma_a, data.sigma_s, data.A);
     
