@@ -5,8 +5,17 @@
     you want for the MC simulation. If you want to see the other program, go to main_2 file         */
 
 #include "simulation_core.h"
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <string>
 #include <chrono>
 #include <omp.h>
+
+#define _USE_MATH_DEFINES
+using std::cout;
+using std::cin;
+using std::endl
 
 
 int main(){
