@@ -89,7 +89,7 @@ int main(){
 
     auto start_time = std::chrono::steady_clock::now();
     #pragma omp parallel for 
-    for(long long int i = 0; i < N_particles; i++){
+    for(long long int i = 0; i < N_particles; ++i){
         int tid = omp_get_thread_num();
         std::vector<double> local_counts(n_bins,0);
         Particle particle(initial_position, initial_direction);
@@ -111,7 +111,7 @@ int main(){
     auto end_time = std::chrono::steady_clock::now();
     double elapsed_seconds = std::chrono::duration<double>(end_time - start_time).count();
     
-    for(int t=0; t<num_threads; t++){
+    for(int t=0; t<num_threads; ++t){
         total_S1.absorbed += thread_S1[t].absorbed;
         total_S2.absorbed += thread_S2[t].absorbed;
         total_S1.escaped_inner += thread_S1[t].escaped_inner;
@@ -123,7 +123,7 @@ int main(){
         total_S1.alive += thread_S1[t].alive;
         total_S2.alive += thread_S2[t].alive;
 
-        for (int k = 0; k < n_bins; k++){
+        for (int k = 0; k < n_bins; ++k){
             S1[k] += thread_flux_S1[t][k];
             S2[k] += thread_flux_S2[t][k];}
     }
@@ -144,7 +144,7 @@ int main(){
     double variance_escaped_outer = total_S2.escaped_outer / N_particles - mean_escaped_outer * mean_escaped_outer;
     double se_escaped_outer = std::sqrt(variance_escaped_outer / N_particles); 
 
-    for (size_t j = 0; j < S1.size(); j++){
+    for (size_t j = 0; j < S1.size(); ++j){
         double r_in = geometry.get_inner_radius() + j * bin_width;
         double r_out = geometry.get_inner_radius() + (j+1) * bin_width;
         double shell_volume = PI*(r_out*r_out - r_in*r_in)*geometry.get_height();
@@ -180,7 +180,7 @@ int main(){
 
     std::ofstream outfile("bin_fluc_unc.csv");
     outfile << "bin center" << "," << "flux" << "," << "uncertainty" << endl;
-    for (size_t i = 0; i < flux.size(); i++ ){
+    for (size_t i = 0; i < flux.size(); ++i){
         outfile << geometry.get_inner_radius() + (i+0.5)*bin_width << "," << flux[i] << "," << standard_error[i] << endl;
     };
 
