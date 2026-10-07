@@ -320,22 +320,22 @@ adjust them to your local layout before running.
 ```
 .
 │ 
-├── full_model.cpp             # interactive: material, geometry, mode all 
-├── materials.txt          # thermal cross sections for 10 materials
-├── simulation_core/      # shared simulation engine (classes, sampling, history loop)
+├── full_model.cpp                        # interactive: material, geometry, mode all 
+├── materials.txt                         # thermal cross sections for 10 materials
+├── simulation_core/                      # shared simulation engine (classes, sampling, history loop)
 │   ├── simulation_core.h
 │   └── simulation_core.cpp
 ├── graphite_demo/
-│   └── full_model_graphite.cpp               # fixed-parameter graphite demo
+│   └── full_model_graphite.cpp           # fixed-parameter graphite demo
 ├── anisotropic_scattering/
-│   ├── anisotropic_scattering.cpp   # standalone CM-to-lab kinematics test
+│   ├── anisotropic_scattering.cpp        # standalone CM-to-lab kinematics test
 │   ├── plot_mu_distribution.py
 │   └── mu_lab_samples.py
 ├── analysis/
 │   ├── plot_flux_profile.py
 │   ├── plot_transmission_vs_thickness.py
 │   └── convergence_study.py
-└── results/                   # generated figures
+└── results/                               # generated figures
 ```
 
 ---
