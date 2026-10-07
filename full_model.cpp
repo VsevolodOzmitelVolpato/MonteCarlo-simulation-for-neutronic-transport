@@ -9,7 +9,8 @@
 #define _USE_MATH_DEFINES
 using std::cout;
 using std::cin;
-using std::endl
+using std::endl;
+using std::vector;
 
 int main(){
 
