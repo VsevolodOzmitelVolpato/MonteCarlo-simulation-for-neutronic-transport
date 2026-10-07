@@ -320,9 +320,11 @@ adjust them to your local layout before running.
 ```
 .
 │ 
-├── simulation_core.h      # shared simulation engine (classes, sampling, history loop)
 ├── full_model.cpp             # interactive: material, geometry, mode all 
 ├── materials.txt          # thermal cross sections for 10 materials
+├── simulation_core/      # shared simulation engine (classes, sampling, history loop)
+│   ├── simulation_core.h
+│   └── simulation_core.cpp
 ├── graphite_demo/
 │   └── full_model_graphite.cpp               # fixed-parameter graphite demo
 ├── anisotropic_scattering/
