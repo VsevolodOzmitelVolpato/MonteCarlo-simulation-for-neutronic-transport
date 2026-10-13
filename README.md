@@ -48,6 +48,8 @@ constant macroscopic values `Sigma_a` and `Sigma_s`, and neutrons do not lose en
 collision. Cross sections are tabulated at thermal energy (2200 m/s) in `materials.txt`
 for ten common reactor materials.
 
+Also, for the **Vector_3** class I have not used the operator notation (such as operator+, operator*...) because I wanted them to be visibile for anyone, without checking the implementation in the simulation_core files.
+
 ---
 
 ## Sampling methods
