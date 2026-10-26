@@ -85,8 +85,8 @@ int main(){
     }
 
     std::vector<HistoryScore> thread_S1(num_threads), thread_S2(num_threads); 
-    std::vector<std::vector<double>> thread_flux_S1(num_threads, vector<double>(n_bins + 16,0));
-    std::vector<std::vector<double>> thread_flux_S2(num_threads, vector<double>(n_bins + 16,0));
+    std::vector<std::vector<double>> thread_flux_S1(num_threads, std::vector<double>(n_bins + 16,0));
+    std::vector<std::vector<double>> thread_flux_S2(num_threads, std::vector<double>(n_bins + 16,0));
 
     auto start_time = std::chrono::steady_clock::now();
     #pragma omp parallel for schedule(static) 
