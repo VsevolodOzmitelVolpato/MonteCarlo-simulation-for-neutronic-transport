@@ -21,7 +21,7 @@ struct Vector_3{
     Vector_3(double a, double b, double c) : x(a), y(b), z(c) {}
 };
 
-struct HistoryScore {
+struct alignas(64) HistoryScore {
     double absorbed = 0.0;
     double escaped_inner = 0.0;
     double escaped_outer = 0.0;
@@ -73,7 +73,7 @@ class Geometry {
     double get_height() const{return height;};
 };
 
-class RNG {
+class alignas(64) RNG {
     private:
     std::mt19937 gen;
     std::uniform_real_distribution<double> distribution{0.0, 1.0};
