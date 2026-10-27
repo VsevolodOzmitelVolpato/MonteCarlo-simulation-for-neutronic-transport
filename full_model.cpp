@@ -89,10 +89,13 @@ int main(){
     std::vector<std::vector<double>> thread_flux_S2(num_threads, std::vector<double>(n_bins + 16,0));
 
     auto start_time = std::chrono::steady_clock::now();
-    #pragma omp parallel for schedule(static) 
-    for(long long int i = 0; i < N_particles; ++i){
+    #pragma omp parallel
+    {
+    std::vector<double> local_counts(n_bins + 16, 0);
+    #pragma omp for schedule(static)
+    for(long long int i = 0; i < N_particles; i++){
         int tid = omp_get_thread_num();
-        std::vector<double> local_counts(n_bins,0);
+        std::fill(local_counts.begin(), local_counts.end(), 0.0);
         Particle particle(initial_position, initial_direction);
 
         HistoryScore score;
