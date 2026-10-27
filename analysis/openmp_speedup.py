@@ -1,4 +1,4 @@
-"""Measure the OpenMP strong-scaling speedup of the Monte Carlo transport code.
+"""This file measures the OpenMP strong-scaling speedup of the Monte Carlo transport code.
 
 Runs the same fixed problem with 1, 2, 4, ... threads, repeats each run, and
 reports median time, speedup and parallel efficiency. It also prints the physical
