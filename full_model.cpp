@@ -110,7 +110,8 @@ int main(){
         for (size_t k = 0; k < S1.size(); k++){
             thread_flux_S1[tid][k] += local_counts[k];
             thread_flux_S2[tid][k] += local_counts[k]*local_counts[k];}
-    };
+    }
+    }
     
     auto end_time = std::chrono::steady_clock::now();
     double elapsed_seconds = std::chrono::duration<double>(end_time - start_time).count();
