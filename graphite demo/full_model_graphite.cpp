@@ -59,10 +59,13 @@ int main(){
     std::vector<std::vector<double>> thread_flux_S2(num_threads, vector<double>(n_bins,0));
 
     auto start_time = std::chrono::steady_clock::now();
-    #pragma omp parallel for 
+    #pragma omp parallel
+    {
+    std::vector<double> local_counts(n_bins + 16, 0);   // un buffer per thread, allocato una volta sola
+    #pragma omp for schedule(static)
     for(long long int i = 0; i < N_particles; i++){
         int tid = omp_get_thread_num();
-        std::vector<double> local_counts(n_bins,0);
+        std::fill(local_counts.begin(), local_counts.end(), 0.0);   // azzera invece di riallocare
         Particle particle(initial_position, initial_direction);
 
         HistoryScore score;
@@ -97,6 +100,7 @@ int main(){
         for (int k = 0; k < n_bins; k++){
             S1[k] += thread_flux_S1[t][k];
             S2[k] += thread_flux_S2[t][k];}
+    }
     }
 
     double mean_absorbed = total_S1.absorbed / N_particles; 
