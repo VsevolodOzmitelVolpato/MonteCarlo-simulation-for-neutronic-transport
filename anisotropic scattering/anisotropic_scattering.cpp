@@ -51,7 +51,7 @@ void main_loop(){
     RNG rng;
     Material hydrogen(1,1);
     int max_iterations = 1000000;
-    std::ofstream outfile("mu_lab_samples.txt");
+    std::ofstream outfile("mu_lab_values.txt");
     outfile << "mu lab values" << endl;
     for (size_t i = 0; i < max_iterations; i++){
         double mu = sample_mu_L(rng, hydrogen);
