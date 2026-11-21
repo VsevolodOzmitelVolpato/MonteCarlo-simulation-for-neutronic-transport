@@ -394,7 +394,7 @@ adjust them to your local layout before running.
 ├── anisotropic_scattering/
 │   ├── anisotropic_scattering.cpp        # standalone CM-to-lab kinematics test
 │   ├── plot_mu_distribution.py
-│   └── mu_lab_samples.py
+│   └── mu_lab_values.txt
 ├── analysis/
 │   ├── plot_flux_profile.py
 │   ├── plot_transmission_vs_thickness.py
